@@ -9,7 +9,7 @@ package Book_manager;
  *
  * @author Abrit
  */
-public class Goodsreads_clone {
+public class Book_manager {
 
     /**
      * @param args the command line arguments

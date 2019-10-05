@@ -13,16 +13,18 @@ import javax.swing.JOptionPane;
  * @author Abrit
  */
 public class author_upload extends javax.swing.JFrame {
-    String name;
+    String name,acctype;
     /**
      * Creates new form author_upload
      */
     public author_upload() {
         initComponents();
     }
-        public author_upload(String name) {
+        public author_upload(String name,String acctype) {
         initComponents();
         this.name= name;
+        System.out.println("current uasr "+name);
+        this.acctype=acctype;
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -60,7 +62,7 @@ public class author_upload extends javax.swing.JFrame {
 
         jLabel5.setText("Name");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fiction", "Engineering", "Medical", "Selfhelp" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
@@ -81,6 +83,16 @@ public class author_upload extends javax.swing.JFrame {
         });
 
         jButton2.setText("back");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -168,7 +180,7 @@ public class author_upload extends javax.swing.JFrame {
         else{
             try{
                 Class.forName("java.sql.DriverManager");
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql","root","1234");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/book_manager","root","1234");
                 PreparedStatement st= con.prepareStatement(query);
                 st.setString(1,catagory);
                 st.setString(2,bookName);
@@ -192,6 +204,15 @@ public class author_upload extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        new author_profile(name,acctype).setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
