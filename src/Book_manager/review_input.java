@@ -155,15 +155,16 @@ public class review_input extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this,"ERROR!!!  Enter a numaric value.");
             jTextField1.setText("");
             }
+            else{
             double ratings=Double.parseDouble(temp);
             double rateTemp = 0;
             if(ratings >5 || ratings < 0){
                 JOptionPane.showMessageDialog(this,"ERROR!!!  Enter a numaric value less than or equalto 5.");
             jTextField1.setText("");
             }
-            System.out.println("1 "+username);
+            //System.out.println("1 "+username);
             
-                    
+            else{       
             //System.out.println(username+"  "+bookName+review+" "+temp);
             addReview(username,bookName,review,temp);
             try{ 
@@ -201,7 +202,9 @@ public class review_input extends javax.swing.JFrame {
         catch(Exception e){
              JOptionPane.showMessageDialog(this,e.getMessage());
         }
-           addToLists(username,bookName);
+        addToLists(username,bookName);
+                    }
+            }
     }//GEN-LAST:event_jButton1ActionPerformed
     double avgrating(double first,double second){
         double temp;
