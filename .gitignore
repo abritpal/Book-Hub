@@ -5,4 +5,6 @@ src/Book_manager/test.form
 src/Book_manager/uploadFile.form
 src/Book_manager/uploadFile.java
 uploadedFiles/*
+!uploadedFiles/.gitkeep
+!gitkeep
 rs2xml.jar
