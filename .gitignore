@@ -1,1 +1,6 @@
-/build/
+./src/Book_manager/test.java
+/build
+src/Book_manager/test.java
+src/Book_manager/test.form
+src/Book_manager/uploadFile.form
+src/Book_manager/uploadFile.java
