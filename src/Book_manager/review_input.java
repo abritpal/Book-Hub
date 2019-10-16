@@ -230,7 +230,7 @@ public class review_input extends javax.swing.JFrame {
         try{
             Class.forName("java.sql.DriverManager");
             Connection con4 = DriverManager.getConnection("jdbc:mysql://localhost:3306/book_manager","root","1234");
-            String query = "insert into reviewTable values(?,?,?,?) order by rating";
+            String query = "insert into reviewTable values(?,?,?,?)";
             PreparedStatement st= con4.prepareStatement(query);
             st.setString(1,username);
             st.setString(2,bookName);
@@ -240,7 +240,7 @@ public class review_input extends javax.swing.JFrame {
             st.executeUpdate();
         }
         catch(ClassNotFoundException | SQLException e){
-            JOptionPane.showMessageDialog(this,e.getMessage());
+            JOptionPane.showMessageDialog(this,e.getMessage()+"here");
         }
     }
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked

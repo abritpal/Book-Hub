@@ -8,8 +8,7 @@ package Book_manager;
 import java.awt.Desktop;
 import java.io.File;
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.*;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 

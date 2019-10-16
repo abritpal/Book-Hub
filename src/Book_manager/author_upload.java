@@ -235,7 +235,7 @@ public class author_upload extends javax.swing.JFrame {
                 st.setString(4,description);
                 st.setString(5,publisher);
                 st.setString(6,noOfPages);
-                st.setDouble(7,5);
+                st.setDouble(7,3);
                 st.setString(8,null);
                 st.setString(9,destFileName);
                 st.executeUpdate();
@@ -279,9 +279,11 @@ public class author_upload extends javax.swing.JFrame {
         JFileChooser fileChooser = new JFileChooser();
         FileNameExtensionFilter txtFilter = new FileNameExtensionFilter("txt files","txt");
         FileNameExtensionFilter txtFilter2 = new FileNameExtensionFilter("ePUB files","epub");
+        FileNameExtensionFilter txtFilter3 = new FileNameExtensionFilter("PDF files","pdf");
         fileChooser.setDialogTitle("Specify a file to Upload");
         fileChooser.setFileFilter(txtFilter);
         fileChooser.setFileFilter(txtFilter2);
+        fileChooser.setFileFilter(txtFilter3);
         int userSelection = fileChooser.showSaveDialog(parentFrame);
 
         if (userSelection == JFileChooser.APPROVE_OPTION) {

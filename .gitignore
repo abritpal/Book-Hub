@@ -8,3 +8,5 @@ uploadedFiles/*
 !uploadedFiles/.gitkeep
 !gitkeep
 rs2xml.jar
+/screen shots/
+*docx
